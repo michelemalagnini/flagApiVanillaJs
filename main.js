@@ -53,6 +53,9 @@ showAllContries.addEventListener("click", () => {
 });
 
 contrieSearchBtn.addEventListener("click", () => {
+  if (resultCountrySearch.innerHTML) {
+    resultCountrySearch.innerHTML = "";
+  }
   resultCountrySearch.style.display = "block";
   const name = countryNameInp.value;
   const url = `https://restcountries.com/v3.1/name/${name}?fullText=true`;
