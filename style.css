@@ -1,5 +1,4 @@
 #main-body {
-  /* display: flex;  aggiungo o rimuovo quando mostro o faccio sparire*/
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
