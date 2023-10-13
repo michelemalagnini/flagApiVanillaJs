@@ -13,6 +13,9 @@ const getAllCountryes = async () => {
     data.map((el) => showCountryes(el));
   } catch (err) {
     console.log(err);
+    errorMessage(
+      "Error there is something wrong the page will be update automatically!"
+    );
   }
 };
 
@@ -69,6 +72,9 @@ const getSearchCountryes = async (url) => {
     showCountry(data[0]);
   } catch (err) {
     console.log(err);
+    errorMessage(
+      "Error the country you are looking for there isn't the page will be update automatically!"
+    );
   }
 };
 
@@ -104,7 +110,19 @@ const getAllCountryName = async () => {
     }
   } catch (err) {
     console.log(err);
+    errorMessage();
   }
 };
 
+const errorMessage = (message) => {
+  const country = document.createElement("div");
+  country.classList.add("cardError");
+  country.innerHTML = `
+    <h1>${message}</h1>
+    `;
+  countryEl.appendChild(country);
+  setTimeout(function () {
+    window.location.reload();
+  }, 3000);
+};
 getAllCountryName();
